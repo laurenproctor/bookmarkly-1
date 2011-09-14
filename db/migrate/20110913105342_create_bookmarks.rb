@@ -4,8 +4,7 @@ class CreateBookmarks < ActiveRecord::Migration
       t.string :url, :null => false
       t.string :tinyurl
       t.string :title
-      t.string :author
-      t.string :desc
+      t.date    :last_modified
       t.integer :site_id, :null => false
 
       t.timestamps

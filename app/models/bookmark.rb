@@ -1,12 +1,10 @@
-require 'bitly'
+
 class Bookmark < ActiveRecord::Base
   
-  include Parser
-
-
+  include Url
   
   validates :url, :url => true
-  validates :site_id, :presence => { :message => "Could not auto create the site for this reason" }
+  validates :site_id, :presence => { :message => "could not be auto generated for this reason" }
   
   belongs_to :site
   
@@ -32,29 +30,24 @@ class Bookmark < ActiveRecord::Base
   
   def auto_retrieve_fields
     get_tinyurl
-    get_author
+    get_last_modified
     get_title
   end
  
   def get_tinyurl
-    # use bit.ly to shorten things
-    bitly = Bitly.new('davegriffiths', 'R_3646b5f251975cfce52e3aa3e593230f')
-    u = bitly.shorten(self.url)
-    self.tinyurl = u.short_url
-  rescue BitlyError
-    self.tinyurl = ""
+    self.tinyurl = shorten(self.url)
   end
-  
-  def get_author
-    # get meta
-  end
-  
+
   def get_title
-     # get meta
+     self.title = get_html_title(self.url)
   end
   
-  def get_desc
-     # get meta
+  # could save all the meta data but will leave that as further work
+  def get_last_modified
+     h = open(self.url)
+     self.last_modified = h.last_modified
+    rescue
+      self.last_modified = ""
   end
   
   

@@ -48,6 +48,6 @@ module Bookmarkly
     config.assets.version = '1.0'
     
     # I like lazy loading
-    config.autoload_paths += %W(#{config.root}/lib)
+     config.autoload_paths += %W(#{config.root}/lib)
   end
 end

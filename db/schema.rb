@@ -14,12 +14,11 @@
 ActiveRecord::Schema.define(:version => 20110913111815) do
 
   create_table "bookmarks", :force => true do |t|
-    t.string   "url",        :null => false
+    t.string   "url",           :null => false
     t.string   "tinyurl"
     t.string   "title"
-    t.string   "author"
-    t.string   "desc"
-    t.integer  "site_id",    :null => false
+    t.date     "last_modified"
+    t.integer  "site_id",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -25,13 +25,19 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
 
-# Added gems
+# DG: Added gems
 
 gem "haml"
+gem "bitly"
+
+# no point re-inventing the wheel
+gem "addressable"
+gem "validate_url"
+

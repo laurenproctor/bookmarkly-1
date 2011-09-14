@@ -1,0 +1,3 @@
+- @bookmark.each do |bookmark|
+  %ul
+    %li= link_to bookmark.url, site_bookmark_path(bookmark.site_id, bookmark.id)

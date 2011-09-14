@@ -1,7 +1,15 @@
 Bookmarkly::Application.routes.draw do
   
-  resources :bookmarks
-  resources :sites
+  root :to => "sites#index"
+  
+  # set up nested resources just for pretty urls
+  resources :sites do
+     resources :bookmarks, :except => [:new, :create]
+  end
+  
+  # have the original inplace as well 
+   resources :bookmarks, :only => [:new, :create]
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

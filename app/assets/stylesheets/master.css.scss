@@ -2,7 +2,7 @@ $font-color: black;
 $background-color: #edf0f3;
 $bookmark-color:#fafbfc;
 $link-color: #2f3c45;
-$accent-color: #e6c92e;
+$accent-color: #8fcc00;
 $warning-color:#ffaabb;
 $radius: 0.3em;
 
@@ -82,10 +82,20 @@ input {
 	&[placeholder]{
 		font-style:italic;
 	}
+
 }
 
+input.button{
+		padding: 0.6em 0.6em 0.6em 0.6em;
+		color:$bookmark-color;
+		background-color:$link-color;
+		&:hover{
+			background-color:$accent-color;
+		}
+	}
+
 label{
-	color:$accent-color;
+	color:#8fcc00;
 }
 
 
@@ -105,7 +115,7 @@ label{
 }
 
 .notice {
-	background-color:green;
+	background-color:#8fcc00;
 	border-radius: $radius;
 	padding:0.3em;
 }

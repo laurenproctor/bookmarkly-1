@@ -3,7 +3,7 @@ require 'bitly'
 require 'open-uri'
 require 'nokogiri'
 
-class Bookmark < ActiveRecord::Base   
+class Bookmark < ActiveRecord::Base 
   acts_as_taggable
   acts_as_taggable_on :tags 
   validates :url, :url => true
@@ -50,7 +50,6 @@ class Bookmark < ActiveRecord::Base
   end
 
   def get_title
-     self.title = get_html_title(self.url)
      site = Nokogiri::HTML(open(url))
      self.title = site.at_css("title").text
      rescue

@@ -42,13 +42,7 @@ div#wrapper
 	text-align: left;
 }
 
-li.bookmark{
-	height: 3em;
-	border-radius: $radius;
-	background-color:$bookmark-color;
-	padding:0.5em;
-	box-shadow: 0px 0px 2px gray;
-}
+
 
 
 // typography
@@ -74,7 +68,7 @@ ul{
 		margin-bottom: 0.5em;		
 	}
 	input{
-		width: 100%
+		width: 80%
 	}
 }
 
@@ -90,10 +84,20 @@ input {
 	}
 }
 
-
+label{
+	color:$accent-color;
+}
 
 
 // design
+
+.bookmark{
+
+	border-radius: $radius;
+	background-color:$bookmark-color;
+	padding:0.7em 0 0.7em 1em;
+	box-shadow: 0px 0px 2px gray;
+}
 
 .alert {
 	background-color:$warning-color ;
@@ -101,7 +105,7 @@ input {
 }
 
 .notice {
-	background-color:yellow;
+	background-color:green;
 	border-radius: $radius;
 	padding:0.3em;
 }

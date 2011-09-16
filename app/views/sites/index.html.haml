@@ -1,10 +1,10 @@
 = link_to "Add a bookmark", new_bookmark_path
 = render :partial => "search"
+%h2= "Sites:"
 - @site.each do |site|
 	%ul
 		%li.bookmark 
-			%span= Site
 			=link_to site.domain, site_bookmarks_path(:site_id => site.id)
-			%span= site.bookmarks.count
+			%span= "(#{site.bookmarks.count})"
 - if @site.empty?
 	%p Sorry, no sites were found.

@@ -1,0 +1,110 @@
+$font-color: black;
+$background-color: #edf0f3;
+$bookmark-color:#fafbfc;
+$link-color: #2f3c45;
+$accent-color: #e6c92e;
+$warning-color:#ffaabb;
+$radius: 0.3em;
+
+// layout 
+
+html
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+}
+
+body
+{
+	color:$font-color;
+	font-family: "Helvetica Neue", "Helvetica", arial , sans-serif; 
+	font-size: 100%;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	min-width: 2px;
+	background-color: $background-color ;
+}
+
+div#wrapper 
+{
+	width: 30%;
+	min-width: 400px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+li.bookmark{
+	height: 3em;
+	border-radius: $radius;
+	background-color:$bookmark-color;
+	padding:0.5em;
+	box-shadow: 0px 0px 2px gray;
+}
+
+
+// typography
+
+h1 a{
+	color: $accent-color;
+}
+
+a{
+ 	color:$link-color;
+
+	&:hover{
+	 color:$accent-color
+	}	
+}
+
+
+ul{
+	list-style:none;
+	padding:0;
+
+	li {
+		margin-bottom: 0.5em;		
+	}
+	input{
+		width: 100%
+	}
+}
+
+input {
+	font-family: "Helvetica Neue", "Helvetica", arial , sans-serif;
+	border-radius: $radius;
+	border: 1px solid rgb(221, 219, 219);
+	font-size: 1em;
+	padding: 0.6em 0.2em 0.6em 0.3em;
+	
+	&[placeholder]{
+		font-style:italic;
+	}
+}
+
+
+
+
+// design
+
+.alert {
+	background-color:$warning-color ;
+	border-radius: $radius;
+}
+
+.notice {
+	background-color:yellow;
+	border-radius: $radius;
+	padding:0.3em;
+}
+
+
+

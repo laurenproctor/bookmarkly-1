@@ -1,8 +1,14 @@
 = form_for @bookmark, :url => { :action => "create" } do |f| 
   - if @bookmark.errors.any?
-    - @bookmark.errors.full_messages.each do |msg|
-      %p= msg
-  = f.text_field :url
-  = f.submit "Create" 
+    %ul.alert
+      %li= "Please resolve:"
+      - @bookmark.errors.full_messages.each do |msg|
+        %li= msg
+  %ul.form
+    %li= f.label :url
+    %li= f.text_field :url, :placeholder => "e.g http://google.com"
+    %li= f.label :tag_list
+    %li= f.text_field :tag_list, :placeholder => " e.g. RUBY, iOS"
+    %li=f.submit "Add Bookmark" 
 
 

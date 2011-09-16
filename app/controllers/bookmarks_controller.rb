@@ -1,15 +1,17 @@
 class BookmarksController < ApplicationController
     respond_to :html
     
-    # nested show
     def index
       if params[:site_id]
         @bookmark = site.bookmarks.find_all_by_site_id(params[:site_id])
+        respond_with [site, @bookmark]
+      elsif params[:search]
+        @bookmark = Bookmark.search(params[:search])
+        respond_with @bookmark
       else
         @bookmark = Bookmark.all
+        respond_with @bookmark
       end
-      
-      respond_with [site, @bookmark]
     end
     
     def show
@@ -17,7 +19,7 @@ class BookmarksController < ApplicationController
        respond_with [site , @bookmark]
     end
    
-   # normal create - as site needs to be autocreated
+   # normal create - as site needs to be autocreated so cant be accessed firsts
     def new
       @bookmark = Bookmark.new 
       respond_with @bookmark

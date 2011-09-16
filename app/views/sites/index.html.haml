@@ -1,3 +1,10 @@
+= link_to "Add a bookmark", new_bookmark_path
+= render :partial => "search"
 - @site.each do |site|
-  %ul
-  %li= link_to site.domain, site_bookmarks_path(:site_id => site.id)
+	%ul
+		%li.bookmark 
+			%span= Site
+			=link_to site.domain, site_bookmarks_path(:site_id => site.id)
+			%span= site.bookmarks.count
+- if @site.empty?
+	%p Sorry, no sites were found.

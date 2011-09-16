@@ -1,6 +1,8 @@
 %ul
   %li= @bookmark.url
-  %li= @bookmark.tinyurl
   %li= @bookmark.title
-  %li= @bookmark.last_modified
-  %li= @bookmark.site_id
+  %li= @bookmark.tinyurl
+-unless @bookmark.tags.empty?
+  %p= @bookmark.tag_list
+= link_to "Back",  site_bookmarks_path
+      

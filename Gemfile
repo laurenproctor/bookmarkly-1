@@ -37,6 +37,8 @@ gem "nokogiri"
 gem "haml"
 gem "bitly"
 
+# use acts taggable on - leaves room for extending the project in the future
+gem 'acts-as-taggable-on', '~>2.1.0'
 
 # no point re-inventing the wheel
 gem "addressable"

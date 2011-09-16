@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-%html
-  %head
-    %title Bookmarkly
+<!doctype HTML>
+%head
+  = stylesheet_link_tag :application
+  %title Bookmarkly
 
-%body
-  =notice
-  =yield
+%div#wrapper
+  %body
+    %h1
+      =link_to "Bookmarkly", root_path
+    = if notice
+      %p.notice= notice
+    =yield
 

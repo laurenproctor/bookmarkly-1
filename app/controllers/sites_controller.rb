@@ -2,8 +2,7 @@ class SitesController < ApplicationController
   respond_to :html
   
   def index
-    @site = Site.all()
-    
+    @site = Site.search(params[:search])
     respond_with @site
   end
   

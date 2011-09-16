@@ -8,7 +8,7 @@ Bookmarkly::Application.routes.draw do
   end
   
   # have the original inplace as well 
-   resources :bookmarks, :only => [:new, :create]
+  resources :bookmarks, :only => [:new, :create, :index]
   
 
   # The priority is based upon order of creation:

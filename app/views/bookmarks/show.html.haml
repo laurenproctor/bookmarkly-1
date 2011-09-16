@@ -10,10 +10,10 @@
 		%li
 			%label= "Bitly:"
 			=@bookmark.tinyurl
-	-unless @bookmark.tags.empty?
-		%p 
-			%label= "Tags:"
-			=@bookmark.tag_list
+		-unless @bookmark.tags.empty?
+			%li 
+				%label= "Tags:"
+				=@bookmark.tag_list
 		
 = link_to "Back",  site_bookmarks_path
       

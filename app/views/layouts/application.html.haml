@@ -8,8 +8,8 @@
 %div#wrapper
   %body
     %h1
-      =link_to "Bookmarkly", root_path
-    = if notice
+      =link_to "Bookmark.ly", root_path
+    -if notice
       %p.notice= notice
     =yield
 

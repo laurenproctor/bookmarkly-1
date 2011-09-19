@@ -32,6 +32,13 @@ group :test do
   gem 'turn', :require => false
 end
 
+group :test, :development do
+  gem 'launchy'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 # DG: Added gems
 gem "nokogiri"
 gem "haml"

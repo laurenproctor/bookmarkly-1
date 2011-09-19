@@ -10,10 +10,8 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    
-    # when /^new bookmark\s?page$/
-    #      new_bookmark_path
-
+    when /the site bookmark page for "(.*)"/
+        site_bookmark_path(Site.find(1), Bookmark.find_by_url($1))
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
